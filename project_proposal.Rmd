@@ -1,0 +1,54 @@
+---
+title: "Group 1 Project Proposal"
+author: "M. Barger, Q. Hershey, A. Moore, E. Prihar"
+date: "10/22/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+https://www.kaggle.com/c/nfl-big-data-bowl-2020
+
+## Problem Description
+This problem is about football
+
+## Data Description
+Take from Kaggle and cite
+
+## Prediction type
+This is a regression problem since the response, Yards Gained by Play, is a scalar.
+
+## Methods
+We can do some neural networks, but the point of our analysis can be how different models perform and why. We could say like, 4 tweaks on model X, or just 4 models
+
+## Error Metrics and Algorithms for assessing them
+The kaggle competition stipulates an error metric based on the cumulative distribution of yards gained.
+
+## Comments and Concerns
+The NFL data has an interesting structure which gives us unique insights and challenges. Rather than each row being an observation, collections of rows unified by a 'Play I.D.' represent one play during a football game, with a response yards gained. There are many interesting preprocessing techniques to transform this data into something we can model. There are countless exploration topics in the data on topics such as matchups, player performance, and team organization that can motivate our models and insights about this unique data.
+
+The high variability in the data is one concern for our regression. An identical play (players, stadium, latent factors) could lead to a 0 yard gain or a 100-yard touchdown. For this reason we will have to negotiate with extreme noise in the developement of our model, and in some cases a lack of predictor correlation to the response.
+
+# The following is sample Rmd code if you want to do anything cute:
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
