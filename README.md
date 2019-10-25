@@ -79,7 +79,7 @@ TONS OF REALLY GOOD DISCUSSIONS ON THE KAGGLE PAGE ABOUT THIS
 We can do some neural networks, but the point of our analysis can be how different models perform and why. We could say like, 4 tweaks on model X, or just 4 models
 
 ## Error Metrics and Algorithms for assessing them
-The kaggle competition stipulates an error metric based on the cumulative distribution of yards gained.
+The kaggle competition stipulates use of the Continuous Ranked Probability Score (CRPS) based on the cumulative distribution of yards gained. The formula is as follows: $$C = \frac{(1)(199N)} \sum_{m=1}^N \sum_{n=-99}^99 i^2 (P(Y \leq n) - H(n - Y_m)^2)$$ where P is the predicted distribution, N is the number of plays in the test set, Y is the actual yardage and H(x) is the Heaviside step function.
 
 ## Comments and Concerns
 The NFL data has an interesting structure which gives us unique insights and challenges. Rather than each row being an observation, collections of rows unified by a 'Play I.D.' represent one play during a football game, with a response yards gained. There are many interesting preprocessing techniques to transform this data into something we can model. There are countless exploration topics in the data on topics such as matchups, player performance, and team organization that can motivate our models and insights about this unique data.
