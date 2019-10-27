@@ -64,12 +64,7 @@ WindSpeed - wind speed in miles/hour
 WindDirection - wind direction
 
 ## Prediction type
-IT COULD BE FRAMED AS A REGRESSION OR CLASSIFICATION PROBLEM. WE ARE ESTIMATING THE CUMULATIVE DISTRIBUTION FUNCTION, SO WE COULD EITHER PREDICT <5,  OR WE COULD DO THE CLASSIFICAITON:
-[0 0 0 0 0 1 1 1 ]
-OR
-[0 0 0 0 0 1 0 0 ]
-
-TONS OF REALLY GOOD DISCUSSIONS ON THE KAGGLE PAGE ABOUT THIS
+The problem could be approached as either regression or classification. We will approach the problem as a regression problem, for a couple of reasons. First, there would be a large number of classes with little data in each class if we approached it as a classification problem. Second, a classification problem would predict only integer values for a single play's yardage, while a regression can incorporate continuous values. While we will need to submit a file which predicts yards as discrete values, using a regression model will still allow for more precise measurements for our predictions because it allows for the fact that yardage is not discrete in real life.  
 
 ## Methods
   Before we begin constructing the model we'll need to attempt to convert the categorical atributes to ordinal atributes. For example, HomeTeamAbbr could be converted to information on the offesive and devensive power of the team. Other categorical atributes can be one hot encoded. There is a possibility of developing a simulation of the play which doens't use machine learning. The advantage of this is that it's easier for a machine learning model to learn the difference between what a theory-based model predicted and the truth than it is for a neural network to learn the theory itself. The disadvantage of this theory-based model creation is that we might not have enough time to work on the machine learning if we use it all making a theory-based model. After we have finished processing the data we plan on using a neural network.
