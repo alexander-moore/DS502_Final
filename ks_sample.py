@@ -27,7 +27,7 @@ model.add(Dense(units = 64, activation = 'relu', input_dim = x_train.shape[1]))
 model.add(Dense(units = 8, activation = 'relu'))
 model.add(Dense(units = 1, activation = 'linear'))
 
-atom = Adam(lr = .01)
+atom = Adam(lr = .005)
 
 model.compile(loss = 'MSE', optimizer = atom)
 
@@ -44,7 +44,7 @@ plt.plot(history.history['val_loss'])
 plt.title('Model loss')
 plt.ylabel('Loss')
 plt.xlabel('Epoch')
-plt.legend(['Train', 'Test'], loc='upper left')
+plt.legend(['Train', 'Validation'], loc='upper left')
 plt.show()
 
 loss_and_metrics = model.evaluate(x_test, y_test, batch_size = 128)
