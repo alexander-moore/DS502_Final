@@ -24,20 +24,19 @@ x_train, x_val, y_train, y_val= train_test_split(x_dat, y_dat, test_size = .25)
 model = Sequential()
 
 model.add(Dense(units = 64, activation = 'relu', input_dim = x_train.shape[1]))
-model.add(Dense(units = 64, activation = 'relu'))
-model.add(Dense(units = 64, activation = 'relu'))
+model.add(Dense(units = 8, activation = 'relu'))
 model.add(Dense(units = 1, activation = 'linear'))
 
-atom = Adam(learning_rate = .01)
+atom = Adam(lr = .01)
 
 model.compile(loss = 'MSE', optimizer = atom)
 
 history = model.fit(x_train, y_train,
-                epochs=50,
-                verbose = 0,
-                batch_size=256,
-                shuffle=True,
-                validation_data=(x_val, y_val))
+                epochs = 100,
+                verbose = 1,
+                batch_size = 256,
+                shuffle = True,
+                validation_data = (x_val, y_val))
 
 # Plot training & validation loss values
 plt.plot(history.history['loss'])
