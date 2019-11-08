@@ -3,17 +3,17 @@
 import pandas as pd
 import numpy as np
 import seaborn as sns
+import datetime
 
 raw_data = pd.read_csv('data/train.csv')
 print(raw_data.shape)
 
-data = raw_data.drop('JerseyNumber', 'Week', 'HomeTeamAbbr', 'VisitorTeamAbbr', 'Week', 'PlayerBirthDate', 'Season')
-
-
-# 'Humidity', 'WindSpeed', 'WindDirection')
+data = raw_data.drop(columns = ['JerseyNumber', 'Week', 'HomeTeamAbbr', 'VisitorTeamAbbr', 'Week', 'PlayerBirthDate', 'Season', 'Humidity', 'WindSpeed', 'WindDirection'])
 
 # turn 2 useless columns (UTC handoff time, UTC snap time) into a differnce
-data['time_to_hand'] = data['TimeHandoff'] - data['TimeSnap']
+print(data['TimeHandoff'])
+
+#data['time_to_hand'] = data['TimeHandoff'] - data['TimeSnap']
 
 # homegame?
 
