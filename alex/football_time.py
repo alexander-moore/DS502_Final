@@ -83,12 +83,12 @@ print(pressed['PlayId'])
 
 for play in list(pressed['PlayId']):
 	print(play)
-	print('hi')
+	#print('hi')
 
 	subset = data[data['PlayId'] == play]
 
-	print(subset)
-	print(subset.columns.values)
+	#print(subset)
+	#print(subset.columns.values)
 
 	#time_hts.append(subset['TimeHandoff'][0] - subset['TimeSnap'][0])
 	defense_pers.append(subset['DefensePersonnel'].iloc[0])
@@ -106,3 +106,5 @@ pressed.join(offense_form, how = 'right')
 pressed.join(game_clock, how = 'right')
 
 print(pressed.columns.values)
+
+pressed.to_csv('../data/pressed_appended.csv')
