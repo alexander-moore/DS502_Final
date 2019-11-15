@@ -11,9 +11,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-data = pd.read_csv('data/clean_census_income.csv')
-target = data['age']
-del data['age']
+data = pd.read_csv('../data/train.csv')
+target = data['Yards']
+del data['Yards']
 
 scaler = MinMaxScaler()
 mms_data = scaler.fit_transform(data)
