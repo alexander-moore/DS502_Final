@@ -26,12 +26,12 @@ print(data.columns.values)
 ## data exploration
 
 desc = data.describe()
-it = desc.shape[1]
+#it = desc.shape[1]
 
-for i in range(it):
-	print(desc[desc.columns[i]])
+#for i in range(it):
+#	print(desc[desc.columns[i]])
 
-cor_mat = data.corr()
+#cor_mat = data.corr()
 
 names = data.columns.values
 
@@ -54,6 +54,12 @@ for ele in grumbo:
 # pairplots
 
 pressed = data.groupby(by = 'PlayId').mean()
+
+pressed.to_csv('../data/pressed.csv')
+data.to_csv('../data/data_no_bs.csv')
+
+sys.exit()
+
 print(pressed)
 print(pressed.shape)
 print(pressed.columns.values) # this just removes 
@@ -70,6 +76,7 @@ game_clock = [] #GameClock
 weather = [] #GameWeather
 
 pressed['PlayId'] = pressed.index.values
+
 
 print(pressed.index)
 print(pressed['PlayId'])
