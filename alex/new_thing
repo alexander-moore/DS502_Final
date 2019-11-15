@@ -1,0 +1,18 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+
+# new idea:
+# use a network to turn the collection of player information into a single 
+# useful scalar
+
+# for each play:
+
+# capture matrix of player distribution
+
+# convert matrix to vector
+
+# collection of these vectors is data
+
+# train test split
+
+# train NN model on this
