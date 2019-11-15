@@ -55,10 +55,10 @@ for ele in grumbo:
 
 pressed = data.groupby(by = 'PlayId').mean()
 
-pressed.to_csv('../data/pressed.csv')
-data.to_csv('../data/data_no_bs.csv')
+#pressed.to_csv('../data/pressed.csv')
+#data.to_csv('../data/data_no_bs.csv')
 
-sys.exit()
+#sys.exit()
 
 print(pressed)
 print(pressed.shape)
@@ -91,10 +91,7 @@ for play in list(pressed['PlayId']):
 	print(subset.columns.values)
 
 	#time_hts.append(subset['TimeHandoff'][0] - subset['TimeSnap'][0])
-	print(defense_pers)
 	defense_pers.append(subset['DefensePersonnel'].iloc[0])
-	print(defense_pers)
-	print(subset['DefensePersonnel'].iloc[0])
 	offense_pers.append(subset['OffensePersonnel'].iloc[0])
 	nflid_rusher.append(subset['NflIdRusher'].iloc[0])
 	offense_form.append(subset['OffenseFormation'].iloc[0])
