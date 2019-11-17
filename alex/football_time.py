@@ -10,7 +10,7 @@ raw_data = pd.read_csv('../data/train.csv')
 print(raw_data.shape)
 
 data = raw_data.drop(columns = ['JerseyNumber', 'Week', 'HomeTeamAbbr', 'VisitorTeamAbbr', 'Week', 'PlayerBirthDate', 'Humidity', 'WindSpeed', 'WindDirection'])
-data = data.drop(columns = ['Team', 'Season', 'DisplayName', 'Location', 'Stadium'])
+data = data.drop(columns = ['Team', 'Season', 'DisplayName', 'Location', 'Stadium', 'StadiumType', 'PlayerCollegeName'])
 
 # turn 2 useless columns (UTC handoff time, UTC snap time) into a differnce
 print(data['TimeHandoff'])
@@ -56,7 +56,7 @@ for ele in grumbo:
 pressed = data.groupby(by = 'PlayId').mean()
 
 #pressed.to_csv('../data/pressed.csv')
-#data.to_csv('../data/data_no_bs.csv')
+data.to_csv('../data/data_no_bs.csv')
 
 #sys.exit()
 
